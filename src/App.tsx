@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./scss/style.scss";
 
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import HomePage from "./pages/HomePage.tsx";

@@ -81,6 +81,8 @@ export function CartProvider({children}:CartProviderProps): ReactElement{
         cartQuantity += cartItems[item].quantity;
     }
 
+    localStorage.setItem('cart',JSON.stringify(cartItems));
+
     return (
         <cartContext.Provider value={{
             cartItems,

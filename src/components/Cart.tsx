@@ -17,19 +17,23 @@ function CartItem({item}: { item:CartItemType }):ReactElement {
     },[product])
 
     return (
-        <Stack direction={'horizontal'} gap={2}>
-            <div style={{width:"125px",height:"75px"}}>
-                <Image src={product.image} style={{width:"100%",height:"100%",objectFit:"contain",backgroundColor:"#e1e1e1"}} />
-            </div>
-            <div className={'me-auto d-flex flex-column'}>
-                <span>{product.title}</span>
-                <span className={'text-muted'}>${product.price}</span>
-            </div>
-            <div className={'ms-auto d-flex gap-2 align-items-center'}>
-                <span className={'fs-4'}>${product.price * item.quantity}</span>
-                <Button onClick={()=>removeFromCart(item.id)} variant={'outline-danger'}>&times;</Button>
-            </div>
-        </Stack>
+           <Stack direction={'horizontal'} gap={2}>
+               {!product.title ? "Loading..." : (
+                   <>
+                       <div style={{width:"125px",height:"75px"}}>
+                           <Image src={product.image} style={{width:"100%",height:"100%",objectFit:"contain",backgroundColor:"#e1e1e1"}} />
+                       </div>
+                       <div className={'me-auto d-flex flex-column'}>
+                           <span>{product.title}</span>
+                           <span className={'text-muted'}>${product.price}</span>
+                       </div>
+                       <div className={'ms-auto d-flex gap-2 align-items-center'}>
+                           <span className={'fs-4'}>${product.price * item.quantity}</span>
+                           <Button onClick={()=>removeFromCart(item.id)} variant={'outline-danger'}>&times;</Button>
+                       </div>
+                   </>
+               )}
+           </Stack>
     )
 }
 
