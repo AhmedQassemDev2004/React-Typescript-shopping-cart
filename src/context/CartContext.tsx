@@ -1,4 +1,4 @@
-import {createContext, ReactElement, ReactNode, useContext, useState} from "react";
+import {createContext, ReactElement, ReactNode, useContext, useEffect, useState} from "react";
 import Cart from "../components/Cart.tsx";
 
 type CartContextType = {
@@ -83,6 +83,12 @@ export function CartProvider({children}:CartProviderProps): ReactElement{
 
     localStorage.setItem('cart',JSON.stringify(cartItems));
 
+
+    useEffect(()=>{
+        if(cartQuantity == 0) {
+            closeCart();
+        }
+    },[cartQuantity])
     return (
         <cartContext.Provider value={{
             cartItems,
