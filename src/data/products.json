@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Iphone 1",
+      "price": 999.99,
+      "image": "/img/iphone1.webp"
+    },
+    {
+      "id": 2,
+      "name": "Iphone 2",
+      "price": 1999.99,
+      "image": "/img/iphone2.webp"
+    },
+    {
+      "id": 3,
+      "name": "Iphone3",
+      "price": 599.99,
+      "image": "/img/iphone3.webp"
+    },
+    {
+      "id": 4,
+      "name": "Iphone 4",
+      "price": 799.99,
+      "image": "/img/iphone4.webp"
+    }
+  ]
+}
